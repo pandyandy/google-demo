@@ -79,10 +79,10 @@ st.markdown(f"{logo_html}", unsafe_allow_html=True)
 
 st.title('London Eye Reviews Sentiment Analysis')
 
-data = read_data('out.c-json-parsing-gemini.reviews_sentiment_final_gemini')
+data = read_data('out.c-json-parsing.reviews_sentiment_final')
 data['parsed_date'] = pd.to_datetime(data['parsed_date'], format='mixed').dt.tz_localize(None)
 
-keywords = read_data('out.c-json-parsing-gemini.reviews_keywords_final_gemini')
+keywords = read_data('out.c-json-parsing.reviews_keywords_final')
 keywords['parsed_date'] = pd.to_datetime(keywords['parsed_date'], format='mixed').dt.tz_localize(None)
 
 data['date'] = data['parsed_date'].dt.date
