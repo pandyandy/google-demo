@@ -32,10 +32,10 @@ keboola = KeboolaStreamlit(KEBOOLA_HOSTNAME, STORAGE_API_TOKEN)
 
 st.set_page_config(layout='wide')
 
-@st.cache_data
-def read_data(table_name):
-    df = keboola.read_table(table_name)
-    return df
+#@st.cache_data
+#def read_data(table_name):
+#    df = keboola.read_table(table_name)
+#    return df
 
 def color_for_value(value):
     if value < -0.2:
@@ -79,10 +79,12 @@ st.markdown(f"{logo_html}", unsafe_allow_html=True)
 
 st.title('London Eye Reviews Sentiment Analysis')
 
-data = read_data('out.c-json-parsing.reviews_sentiment_final')
+data_path = "/data/in/tables/reviews_sentiment_final_gemini.csv"
+data = pd.read_csv(data_path)
 data['parsed_date'] = pd.to_datetime(data['parsed_date'], format='mixed').dt.tz_localize(None)
 
-keywords = read_data('out.c-json-parsing.reviews_keywords_final')
+keywords_path = "/data/in/tables/reviews_keywords_final_gemini.csv"
+keywords = pd.read_csv(keywords_path)
 keywords['parsed_date'] = pd.to_datetime(keywords['parsed_date'], format='mixed').dt.tz_localize(None)
 
 data['date'] = data['parsed_date'].dt.date
