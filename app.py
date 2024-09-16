@@ -23,12 +23,12 @@ KEBOOLA_GEMINI_PATH = IMAGE_PATH + "/static/keboola_gemini.png"
 LONDON_EYE_WC_PATH = IMAGE_PATH + "/static/london_eye_wc.png"
 
 STORAGE_API_TOKEN = st.secrets['STORAGE_API_TOKEN']
-KEBOOLA_HOSTNAME = st.secrets['KEBOOLA_HOSTNAME']
+KEBOOLA_URL = st.secrets['KEBOOLA_URL']
 CREDENTIALS = service_account.Credentials.from_service_account_info(
     jwt.decode(st.secrets['ENCODED_TOKEN'], 'keboola', algorithms=['HS256'])
 )
 
-keboola = KeboolaStreamlit(KEBOOLA_HOSTNAME, STORAGE_API_TOKEN)
+keboola = KeboolaStreamlit(KEBOOLA_URL, STORAGE_API_TOKEN)
 
 st.set_page_config(layout='wide')
 
