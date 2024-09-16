@@ -237,12 +237,12 @@ with col2:
     else:
         st.info("No keywords found to generate the word cloud.")
         
-gemini_html = f'<div style="display: flex; justify-content: center;"><img src="data:image/png;base64,{base64.b64encode(open(KEBOOLA_GEMINI_PATH, "rb").read()).decode()}" style="width: 60px; margin-top: 30px;"></div>'
-st.markdown(f'{gemini_html}', unsafe_allow_html=True)
+#gemini_html = f'<div style="display: flex; justify-content: center;"><img src="data:image/png;base64,{base64.b64encode(open(KEBOOLA_GEMINI_PATH, "rb").read()).decode()}" style="width: 60px; margin-top: 30px;"></div>'
+#st.markdown(f'{gemini_html}', unsafe_allow_html=True)
 
 st.markdown("""
 <div style="text-align: left;">
-    <h4>Reply to a review with Gemini</h4>
+    <h4>Reply to a review with AI</h4>
 </div>
 """, unsafe_allow_html=True)
 
