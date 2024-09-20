@@ -5,4 +5,4 @@ vertexai
 google-auth
 google-cloud-aiplatform
 plotly
-keboola-streamlit
+keboola-streamlit==0.0.5
